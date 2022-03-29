@@ -67,7 +67,7 @@ def chapter_counts_per_day(start_date: date, end_date: date, total_chapters: int
 
 def reading_plan(start_date: date, end_date: date, books: typing.List[Book]):
     all_chapters = chapters(books)
-    total_chapters = sum([book.num_chapters for book in books])
+    total_chapters = sum(book.num_chapters for book in books)
     for plan_date, todays_chapters in chapter_counts_per_day(
         start_date, end_date, total_chapters
     ):
